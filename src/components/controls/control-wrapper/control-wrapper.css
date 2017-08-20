@@ -1,0 +1,11 @@
+.control-wrapper {
+    display: block;
+    width: 100%;
+}
+
+.control-wrapper__label {
+}
+
+.control-wrapper__error {
+    color: lightcoral;
+}
