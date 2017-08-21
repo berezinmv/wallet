@@ -12,11 +12,23 @@ export const requestOperations = (user_id: string, from: string, to: string) =>
 export const receiveOperations = (user_id: string, operations: Array<Operation>, from: string, to: string) =>
     createAction(RECEIVE_OPERATIONS, {user_id, operations, from, to});
 
-export const fetchOperations = (user_id: string, from: string, to: string) =>
-    dispatch => {
+export const fetchOperations = (user_id: string, dateFrom: string, dateTo: string) =>
+    (dispatch, getState) => {
 
-        dispatch(requestOperations(user_id, from, to));
+        dispatch(requestOperations(user_id, dateFrom, dateTo));
 
-        return loadOperations(user_id, from, to)
-            .then(responseData => dispatch(receiveOperations(user_id, responseData, from, to)));
+        return loadOperations(user_id, dateFrom, dateTo)
+            .then(responseData => {
+                const state = getState();
+                if (state.dateFrom === dateFrom && state.dateTo === dateTo && state.selectedUser === user_id) {
+                    dispatch(receiveOperations(user_id, responseData, dateFrom, dateTo));
+                }
+            });
+    };
+
+export const dispatchAndFetchOperations = (action) =>
+    (dispatch, getState) => {
+        dispatch(action);
+        const {selectedUser, dateFrom, dateTo} = getState();
+        dispatch(fetchOperations(selectedUser, dateFrom, dateTo));
     };

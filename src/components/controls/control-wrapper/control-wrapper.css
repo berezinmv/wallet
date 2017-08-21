@@ -3,9 +3,9 @@
     width: 100%;
 }
 
-.control-wrapper__label {
+.control-wrapper .control-wrapper__label {
 }
 
-.control-wrapper__error {
+.control-wrapper .control-wrapper__error {
     color: lightcoral;
 }

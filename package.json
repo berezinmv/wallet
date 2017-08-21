@@ -24,6 +24,7 @@
     "chai": "^4.1.1",
     "email-validator": "^1.1.1",
     "mocha": "^3.5.0",
+    "moment": "^2.18.1",
     "nock": "^9.0.14",
     "postcss-loader": "^2.0.6",
     "prop-types": "^15.5.10",

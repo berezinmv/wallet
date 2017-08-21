@@ -33,6 +33,7 @@ describe("actions/fetchOperations", () => {
         const user_id = "user_id1";
         const from = "from1";
         const to = "to1";
+        store = mockStore({selectedUser: user_id, dateFrom: from, dateTo: to});
         const operations = [{operation_id: "id1", user_id: user_id}];
         nock(host).get(createUrl(user_id, from, to))
             .reply(200, operations);

@@ -1,0 +1,27 @@
+.application {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.application .application__user-list {
+    flex: 1;
+}
+
+.application .application__user-form {
+    flex: 1;
+}
+
+.application .application__operations-list {
+    flex: 1;
+}
+
+.application .application__dates {
+    display: flex;
+}
+
+.application .application__date-from, .application .application__date-to {
+    flex: 1;
+}
