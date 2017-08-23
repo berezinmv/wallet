@@ -1,6 +1,10 @@
 import {CHANGE_FROM} from "../actions/change-dates";
+import type {Action} from "../actions/action";
+import moment from "moment";
 
-const dateFrom = (state: string = "2016-10-14T00:00:00Z", action) => {
+const defaultDate = moment().subtract(1, "month").utc().format();
+
+const dateFrom = (state: string = defaultDate, action: Action) => {
     switch (action.type) {
         case CHANGE_FROM:
             return action.payload.dateFrom;

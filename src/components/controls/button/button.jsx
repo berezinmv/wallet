@@ -1,6 +1,6 @@
 import React from "react";
 import "./button.css";
-import appendClassName from "../../../utils/append-classname";
+import classNames from "classnames";
 
 /**
  * Button
@@ -11,7 +11,7 @@ import appendClassName from "../../../utils/append-classname";
  * @constructor
  */
 const Button = ({label, onClick, disabled, className}) => (
-    <button className={appendClassName("button-control", className)} onClick={onClick} disabled={disabled}>
+    <button className={classNames("button-control", className)} onClick={onClick} disabled={disabled}>
         {label}
     </button>
 );

@@ -30,5 +30,5 @@ export const dispatchAndFetchOperations = (action) =>
     (dispatch, getState) => {
         dispatch(action);
         const {selectedUser, dateFrom, dateTo} = getState();
-        dispatch(fetchOperations(selectedUser, dateFrom, dateTo));
+        return dispatch(fetchOperations(selectedUser, dateFrom, dateTo));
     };

@@ -1,0 +1,17 @@
+.list {
+
+}
+
+.list .list__item {
+    cursor: pointer;
+}
+
+.list .list__item:hover {
+    background: lightblue;
+}
+
+.list .list__item.selected, .list .list__item.selected:hover {
+    background: deepskyblue;
+}
+
+

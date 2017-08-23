@@ -1,21 +1,12 @@
 .application {
+    position: absolute;
     height: 100%;
     width: 100%;
-
-    display: flex;
-    flex-direction: row;
 }
 
-.application .application__user-list {
-    flex: 1;
-}
-
-.application .application__user-form {
-    flex: 1;
-}
-
-.application .application__operations-list {
-    flex: 1;
+.application .application__users .panel__header {
+    background: #428bca;
+    color: white;
 }
 
 .application .application__dates {
@@ -24,4 +15,9 @@
 
 .application .application__date-from, .application .application__date-to {
     flex: 1;
+}
+
+.application .application__panel {
+    margin: 0 10px;
+    height: 100%;
 }

@@ -11,12 +11,23 @@ export const requestUsers = (offset: number, limit: number) => createAction(REQU
 export const receiveUsers = (offset: number, limit: number, users: Array<User>, total: number) =>
     createAction(RECEIVE_USERS, {offset, limit, users, total});
 
-export const fetchUsers = (offset: number, limit: number) =>
-    dispatch => {
+export const usersOnPage = 20;
+
+export const fetchUsers = () =>
+    (dispatch, getState) => {
+
+        const {usersPage: page, usersSearch: searchText} = getState();
+        const limit = usersOnPage;
+        const offset = page * limit;
 
         dispatch(requestUsers(offset, limit));
 
-        return loadUsers(offset, limit)
-            .then(responseData => dispatch(receiveUsers(offset, limit, responseData.data, responseData.recordsTotal)));
+        return loadUsers(offset, limit, searchText)
+            .then(responseData => {
+                dispatch(receiveUsers(offset, limit, responseData.data, responseData.recordsTotal));
+                // if (offset >= responseData.recordsTotal) {
+                //     dispatch(changePage(responseData.recordsTotal % limit));
+                // }
+            });
     };
 

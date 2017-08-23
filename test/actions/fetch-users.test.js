@@ -18,7 +18,7 @@ describe("actions/fetchUsers", () => {
 
     beforeEach(() => {
         nockClear();
-        store = mockStore({});
+        store = mockStore({usersPage: 0});
     });
 
     afterEach(nockClear);
@@ -26,7 +26,7 @@ describe("actions/fetchUsers", () => {
     it("creates 'REQUEST_USERS' (always) and 'RECEIVE_USERS' (when fetching has been done)", () => {
         const users = [{user_name: "user1", user_id: "id1"}];
         const offset = 0;
-        const limit = 10;
+        const limit = 20;
         nock(host).get(createUrl(offset, limit))
             .reply(200, {data: users, recordsTotal: 1});
 

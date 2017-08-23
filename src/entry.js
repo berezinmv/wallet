@@ -1,3 +1,5 @@
+import "reset-css/reset.css";
+import "./global.css";
 import "./polyfills";
 import Root from "./root";
 

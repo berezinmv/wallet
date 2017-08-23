@@ -8,10 +8,13 @@ import {fetchUsers} from "./actions/fetch-users";
 
 export default class Root extends Component {
 
-    store = createStore(reducers, applyMiddleware(thunkMiddleware));
+    constructor(props, context) {
+        super(props, context);
+        this.store = createStore(reducers, applyMiddleware(thunkMiddleware));
+        this.store.dispatch(fetchUsers());
+    }
 
     render() {
-        this.store.dispatch(fetchUsers(0, 10));
         return (
             <Provider store={this.store}>
                 <App/>

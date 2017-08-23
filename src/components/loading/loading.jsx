@@ -3,7 +3,7 @@ import "./loading.css";
 
 const Loading = () => (
     <div className="loading-placeholder">
-        loading
+        Loading...
     </div>
 );
 

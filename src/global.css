@@ -1,0 +1,13 @@
+/* border-box */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* font */
+html {
+    font-family: Arial, sans-serif;
+}

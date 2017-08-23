@@ -1,0 +1,28 @@
+.panel {
+    border: 1px solid lightgray;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.panel .panel__header, .panel .panel__content, .panel .panel__footer, .panel .panel__toolbar {
+    padding: 10px;
+}
+
+.panel .panel__header {
+    background: lightgray;
+}
+
+.panel .panel__toolbar {
+
+}
+
+.panel .panel__content {
+    overflow: auto;
+
+    flex: auto;
+    flex-basis: 0;
+}
+
+.panel .panel__footer {
+}

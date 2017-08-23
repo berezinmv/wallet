@@ -1,8 +1,9 @@
 import {connect} from "react-redux";
 import {changeTo} from "../../actions/change-dates";
 import DateTimePicker from "../../components/controls/datetime-picker/datetime-picker";
+import type {State} from "../../reducers/state";
 
-const mapStateToProps = state => ({value: state.dateTo});
+const mapStateToProps = (state: State) => ({value: state.dateTo, label: "To"});
 
 const mapDispatchToProps = dispatch => ({
     onChange(value) {

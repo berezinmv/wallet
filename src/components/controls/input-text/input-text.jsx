@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "../input/input";
 import "./input-text.css";
-import appendClassName from "../../../utils/append-classname";
+import classNames from "classnames";
 
 /**
  * Text input
@@ -15,7 +15,7 @@ import appendClassName from "../../../utils/append-classname";
  * @constructor
  */
 const InputText = ({type = "text", value, onChange, placeholder, label, className, validator}) => (
-    <Input className={appendClassName("input-text-control", className)} type={type} value={value} onChange={onChange}
+    <Input className={classNames("input-text-control", className)} type={type} value={value} onChange={onChange}
            placeholder={placeholder} label={label} validator={validator}/>
 );
 

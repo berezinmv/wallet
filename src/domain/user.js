@@ -7,5 +7,5 @@ export type User = {
     balance: number;
     wallet_amount: number;
     wallet_currency: string;
-    enabled: boolean;
+    enabled?: boolean;
 }

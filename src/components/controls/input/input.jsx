@@ -1,7 +1,9 @@
 import React from "react";
 import ControlWrapper from "../control-wrapper/control-wrapper";
 import "./input.css";
-import appendClassName from "../../../utils/append-classname";
+import classNames from "classnames";
+
+const createOnChange = onChange => (event: Event) => onChange && onChange(event.target.value);
 
 /**
  * Input
@@ -16,8 +18,8 @@ import appendClassName from "../../../utils/append-classname";
  */
 const Input = ({type = "text", className, value, onChange, placeholder, label, validator}) => (
     <ControlWrapper label={label} errorMessage={validator && validator(value)}>
-        <input className={appendClassName("input-control", className)} type={type} value={value} onChange={onChange}
-               placeholder={placeholder}/>
+        <input className={classNames("input-control", className)} type={type} value={value}
+               onChange={createOnChange(onChange)} placeholder={placeholder}/>
     </ControlWrapper>
 );
 
